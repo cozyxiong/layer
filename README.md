@@ -1,2 +1,2 @@
-# layer
-layer stake application
+## layer
+L2 staking application
