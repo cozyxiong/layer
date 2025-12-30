@@ -200,7 +200,7 @@ contract DelegationManager is Initializable, OwnableUpgradeable, ReentrancyGuard
         emit StakerDelegated(staker, operator);
         (IStrategyBase[] memory strategies, uint256[] memory shares) = strategyManager.queryStakerShares(staker);
         for (uint256 i = 0; i < strategies.length; i++) {
-            operatorShares[operator][strategies[i]] = shares[i];
+            operatorShares[operator][strategies[i]] += shares[i];
             emit OperatorSharesIncreased(operator, staker, strategies[i], shares[i]);
         }
     }
